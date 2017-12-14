@@ -35,7 +35,7 @@ class Book extends Component {
 
     var image = ''
 
-    if(book.imageLinks.thumbnail){
+    if(book.imageLinks && book.imageLinks.thumbnail){
       image = book.imageLinks.thumbnail;
     }
 

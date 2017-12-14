@@ -12,14 +12,17 @@ class Book extends Component {
 
     const { book, onUpdateBook, books } = this.props
 
+    // For multiple author assignment
     if(book.authors) {
       var authors = book.authors.map((author,index) => <div key={index} className="book-authors">{author}</div>)
     }
 
+    // Assignes book.shelf to none if the book is not on a shelf
     if(!book.shelf){
       book.shelf = 'none'
     }
 
+    // assigns defualt value fo shelf to books that return in a search that are already on a shelf.
     if(books){
 
       var response = books.filter(data => data.id === book.id)

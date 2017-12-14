@@ -18,7 +18,7 @@ class SearchBooks extends Component {
     searchBooks: []
   }
 
-
+// Updates query and searches with BooksAPI, then assigns returned data to searchBooks array.
   onUpdateQuery = (query) => {
     this.setState({ query: query.trim() }, () => {
       BooksAPI.search(this.state.query, 20).then(data => {
@@ -29,6 +29,8 @@ class SearchBooks extends Component {
 
   render() {
 
+    // Checks if search returned any books and if it does sorts books by title
+    // and assigns data to Book component for each book
     if(this.state.searchBooks) {
       if(!this.state.searchBooks.error){
         this.state.searchBooks.sort(sortBy('title'))

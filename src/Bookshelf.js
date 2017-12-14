@@ -20,6 +20,7 @@ class Bookshelf extends Component {
 
     var shelfName = ''
 
+    // Checks shelf name.
     if (books.length!==0) {
       if(books[0].shelf==="read") {
         shelfName = 'Read'
@@ -32,6 +33,7 @@ class Bookshelf extends Component {
       }
 
 
+      // assigns data from each book on shelf to a Book component.
       var eachBook = books.map((book) => {
         return <li key={book.id}><Book
         onUpdateBook={this.props.onUpdateBook}

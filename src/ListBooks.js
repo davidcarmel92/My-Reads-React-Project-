@@ -17,12 +17,14 @@ class ListBooks extends Component {
 
     books.sort(sortBy('title'))
 
+    // Filters all of the books into arrays segreated by shelf title.
     var read = books.filter((book) =>  book.shelf === "read")
     var currentlyReading = books.filter((book) =>  book.shelf === "currentlyReading")
     var wantToRead = books.filter((book) =>  book.shelf === "wantToRead")
 
     var shelves = [currentlyReading, wantToRead, read]
 
+    // maps out new bookshelves array with Bookshelf components
     var bookshelves = shelves.map((shelf,index) => <Bookshelf key={index} data={shelf}
     onUpdateBook={onUpdateBook}/>)
 

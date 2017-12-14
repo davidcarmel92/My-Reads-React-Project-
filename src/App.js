@@ -20,18 +20,24 @@ class BooksApp extends Component {
   }
 
   onUpdateBook = ( changedBook, shelf ) => {
-
+    /*
+      Function changes book shelf by updating BooksAPI and using setState to books array.
+    */
 
     BooksAPI.update(changedBook, shelf)
     .then(data => {
 
+      // Finds changed book
       var updatedBooks = this.state.books.filter(book => book.id !== changedBook.id)
 
+
+      // Checks if the shelf selected is not none and then changes the shelf property of the selected book.
       if(shelf !== "none") {
         changedBook.shelf = shelf
         updatedBooks.push(changedBook)
       }
 
+      // updates books array with array container changed book
       this.setState({ books: updatedBooks })
 
     })

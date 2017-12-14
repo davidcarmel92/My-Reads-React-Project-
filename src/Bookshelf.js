@@ -14,22 +14,22 @@ class Bookshelf extends Component {
 
     const { data } = this.props
 
-    var books = []
+    var books = [];
 
     books = data.map((book) => book )
 
-    var shelfName = ''
+    var shelfName = '';
 
     // Checks shelf name.
     if (books.length!==0) {
       if(books[0].shelf==="read") {
-        shelfName = 'Read'
+        shelfName = 'Read';
       }
       else if (books[0].shelf==="currentlyReading") {
-        shelfName = 'Currently Reading'
+        shelfName = 'Currently Reading';
       }
       else {
-        shelfName = 'Want To Read'
+        shelfName = 'Want To Read';
       }
 
 

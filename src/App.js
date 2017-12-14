@@ -28,12 +28,12 @@ class BooksApp extends Component {
     .then(data => {
 
       // Finds changed book
-      var updatedBooks = this.state.books.filter(book => book.id !== changedBook.id)
+      var updatedBooks = this.state.books.filter(book => book.id !== changedBook.id);
 
 
       // Checks if the shelf selected is not none and then changes the shelf property of the selected book.
       if(shelf !== "none") {
-        changedBook.shelf = shelf
+        changedBook.shelf = shelf;
         updatedBooks.push(changedBook)
       }
 
@@ -54,13 +54,10 @@ class BooksApp extends Component {
           onUpdateBook={this.onUpdateBook}
           />
         )}/>
-        <Route path='/search' render={({ history }) => (
+        <Route path='/search' render={() => (
           <SearchBooks
           books={this.state.books}
-          onUpdateBook={(book, shelf) => {
-            this.onUpdateBook(book, shelf)
-            history.push('/')
-          }}
+          onUpdateBook={this.onUpdateBook}
          />
         )}/>
       </div>

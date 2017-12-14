@@ -19,16 +19,16 @@ class Book extends Component {
 
     // Assignes book.shelf to none if the book is not on a shelf
     if(!book.shelf){
-      book.shelf = 'none'
+      book.shelf = 'none';
     }
 
     // assigns defualt value fo shelf to books that return in a search that are already on a shelf.
     if(books){
 
-      var response = books.filter(data => data.id === book.id)
+      var response = books.filter(data => data.id === book.id);
 
       if(response.length!==0){
-        book.shelf = response[0].shelf
+        book.shelf = response[0].shelf;
       }
 
     }
@@ -36,7 +36,7 @@ class Book extends Component {
     var image = ''
 
     if(book.imageLinks.thumbnail){
-      image = book.imageLinks.thumbnail
+      image = book.imageLinks.thumbnail;
     }
 
 
@@ -45,7 +45,7 @@ class Book extends Component {
 
       <div className="book">
         <div className="book-top">
-          <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${image})` }}></div>
+          <div className="book-cover" style={{backgroundImage: `url(${image})` }}></div>
             <div className="book-shelf-changer">
               <select onChange={(event) =>  onUpdateBook(book, event.target.value)}
                 defaultValue={book.shelf}

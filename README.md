@@ -12,7 +12,7 @@ This project demonstrates ability in using React to create a single page applica
 
 ## How to use the application
 
-To use this application, navigate to the search page and enter a search term to find books. The search is limited to a fixed set of terms that are outlined below. Select a book that is returned from the search and indicate which shelf you would like to place that book on. On the bookshelf screen, view all of you books that are currently on shelves and switch shelves by selecting a book and changing it's shelf to one of the options.
+To use this application, navigate to the search page and enter a search term to find books. The search is limited to a fixed set of terms that are outlined below. Select a book that is returned from the search and indicate which shelf you would like to place that book on. On the bookshelf screen, view all of you books that are currently on shelves and switch shelves by selecting a book and changing its shelf to one of the options.
 
 ## Backend Server
 
